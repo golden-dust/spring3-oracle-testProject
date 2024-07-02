@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.goldendust.freeboard.dao.BoardDao">
+	
+	<insert id="writePost">
+		INSERT INTO freeboard(BNUM, MNAME, BTITLE, BCONTENT) VALUES(FREEBOARD_SEQ.nextval, #{param1}, #{param2}, #{param3})
+	</insert>
+	
+	<select id="getList" resultType="com.goldendust.freeboard.dto.BoardDto">
+		SELECT * FROM freeboard ORDER BY BNUM DESC
+	</select>
+	
+</mapper>
